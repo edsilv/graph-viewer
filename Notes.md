@@ -10,7 +10,7 @@
 {{/if}}
 ```
 
-##Why do I have to repeat the Details and Graph components to force them to render? Shouldn't updating the `graphcategory` and `details` data trigger this?
+##Why do I have to duplicate the Details and Graph components to force them to render? Shouldn't updating the `graphcategory` and `details` data trigger this?
 
     src/App.html
 
