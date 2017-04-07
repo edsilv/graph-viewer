@@ -148,7 +148,7 @@ function renderMainFragment$1 ( root, component ) {
 	var ifBlock = currentBlock && currentBlock( root, component );
 	
 	if ( ifBlock ) ifBlock.mount( ifBlock_anchor.parentNode, ifBlock_anchor );
-	appendNode( createText( "\r\n    " ), div );
+	appendNode( createText( "\n    " ), div );
 	var ifBlock1_anchor = createComment();
 	appendNode( ifBlock1_anchor, div );
 	
@@ -162,7 +162,7 @@ function renderMainFragment$1 ( root, component ) {
 	var ifBlock1 = currentBlock1 && currentBlock1( root, component );
 	
 	if ( ifBlock1 ) ifBlock1.mount( ifBlock1_anchor.parentNode, ifBlock1_anchor );
-	appendNode( createText( "\r\n    " ), div );
+	appendNode( createText( "\n    " ), div );
 	var ifBlock2_anchor = createComment();
 	appendNode( ifBlock2_anchor, div );
 	
@@ -175,7 +175,7 @@ function renderMainFragment$1 ( root, component ) {
 	var ifBlock2 = currentBlock2 && currentBlock2( root, component );
 	
 	if ( ifBlock2 ) ifBlock2.mount( ifBlock2_anchor.parentNode, ifBlock2_anchor );
-	appendNode( createText( "\r\n    " ), div );
+	appendNode( createText( "\n    " ), div );
 	var ifBlock3_anchor = createComment();
 	appendNode( ifBlock3_anchor, div );
 	
@@ -188,7 +188,7 @@ function renderMainFragment$1 ( root, component ) {
 	var ifBlock3 = currentBlock3 && currentBlock3( root, component );
 	
 	if ( ifBlock3 ) ifBlock3.mount( ifBlock3_anchor.parentNode, ifBlock3_anchor );
-	appendNode( createText( "\r\n    " ), div );
+	appendNode( createText( "\n    " ), div );
 	var ifBlock4_anchor = createComment();
 	appendNode( ifBlock4_anchor, div );
 	
@@ -201,7 +201,7 @@ function renderMainFragment$1 ( root, component ) {
 	var ifBlock4 = currentBlock4 && currentBlock4( root, component );
 	
 	if ( ifBlock4 ) ifBlock4.mount( ifBlock4_anchor.parentNode, ifBlock4_anchor );
-	appendNode( createText( "\r\n    " ), div );
+	appendNode( createText( "\n    " ), div );
 	
 	var div1 = createElement( 'div' );
 	div1.className = "types";
@@ -219,7 +219,7 @@ function renderMainFragment$1 ( root, component ) {
 	var ifBlock5 = currentBlock5 && currentBlock5( root, component );
 	
 	if ( ifBlock5 ) ifBlock5.mount( ifBlock5_anchor.parentNode, ifBlock5_anchor );
-	appendNode( createText( "\r\n        " ), div1 );
+	appendNode( createText( "\n        " ), div1 );
 	var ifBlock6_anchor = createComment();
 	appendNode( ifBlock6_anchor, div1 );
 	
@@ -334,7 +334,7 @@ function renderIfBlock6_0 ( root, component ) {
 	
 	appendNode( h3, div );
 	appendNode( createText( "Form" ), h3 );
-	appendNode( createText( "\r\n                " ), div );
+	appendNode( createText( "\n                " ), div );
 	var text2 = createText( root.content.form );
 	appendNode( text2, div );
 
@@ -363,7 +363,7 @@ function renderIfBlock5_0 ( root, component ) {
 	
 	appendNode( h3, div );
 	appendNode( createText( "Themes" ), h3 );
-	appendNode( createText( "\r\n                " ), div );
+	appendNode( createText( "\n                " ), div );
 	
 	var ul = createElement( 'ul' );
 	
@@ -524,7 +524,7 @@ function renderIfBlock1_1$1 ( root, component ) {
 	div.className = "image-or-video";
 	
 	var img = createElement( 'img' );
-	img.src = "/images/" + ( root.content.image );
+	img.src = "images/" + ( root.content.image );
 	
 	appendNode( img, div );
 
@@ -534,7 +534,7 @@ function renderIfBlock1_1$1 ( root, component ) {
 		},
 		
 		update: function ( changed, root ) {
-			img.src = "/images/" + ( root.content.image );
+			img.src = "images/" + ( root.content.image );
 		},
 		
 		teardown: function ( detach ) {
@@ -555,7 +555,7 @@ function renderIfBlock1_0$1 ( root, component ) {
 	appendNode( a, div );
 	
 	var img = createElement( 'img' );
-	img.src = "/images/" + ( root.content.image );
+	img.src = "images/" + ( root.content.image );
 	
 	appendNode( img, a );
 
@@ -567,7 +567,7 @@ function renderIfBlock1_0$1 ( root, component ) {
 		update: function ( changed, root ) {
 			a.href = root.content.link;
 			
-			img.src = "/images/" + ( root.content.image );
+			img.src = "images/" + ( root.content.image );
 		},
 		
 		teardown: function ( detach ) {
@@ -789,7 +789,7 @@ var template$2 = (function () {
 let addedCss = false;
 function addCss () {
 	var style = createElement( 'style' );
-	style.textContent = "\r\n    \r\n    \r\n\r\n";
+	style.textContent = "\n    \n    \n\n";
 	appendNode( style, document.head );
 
 	addedCss = true;
@@ -797,7 +797,7 @@ function addCss () {
 
 function renderMainFragment$2 ( root, component ) {
 	var div = createElement( 'div' );
-	setAttribute( div, 'svelte-3105916385', '' );
+	setAttribute( div, 'svelte-1144599852', '' );
 	div.id = "graph";
 
 	return {
@@ -871,9 +871,6 @@ Graph.prototype.teardown = function teardown ( detach ) {
 
 var template = (function () {
 
-
-
-
 return {
 	
 	components: {
@@ -943,7 +940,7 @@ function renderMainFragment ( root, component ) {
 	var ifBlock = currentBlock && currentBlock( root, component );
 	
 	if ( ifBlock ) ifBlock.mount( ifBlock_anchor.parentNode, ifBlock_anchor );
-	appendNode( createText( "\r\n\t\t" ), ul );
+	appendNode( createText( "\n\t\t" ), ul );
 	
 	var li1 = createElement( 'li' );
 	
@@ -960,7 +957,7 @@ function renderMainFragment ( root, component ) {
 	var ifBlock1 = currentBlock1 && currentBlock1( root, component );
 	
 	if ( ifBlock1 ) ifBlock1.mount( ifBlock1_anchor.parentNode, ifBlock1_anchor );
-	appendNode( createText( "\r\n\t\t" ), ul );
+	appendNode( createText( "\n\t\t" ), ul );
 	
 	var li2 = createElement( 'li' );
 	
@@ -977,7 +974,7 @@ function renderMainFragment ( root, component ) {
 	var ifBlock2 = currentBlock2 && currentBlock2( root, component );
 	
 	if ( ifBlock2 ) ifBlock2.mount( ifBlock2_anchor.parentNode, ifBlock2_anchor );
-	var text2 = createText( "\r\n\r\n" );
+	var text2 = createText( "\n\n" );
 	
 	var main = createElement( 'main' );
 	
@@ -1069,7 +1066,7 @@ function renderIfBlock3_2 ( root, component ) {
 		data: details_initialData
 	});
 	
-	var text = createText( "\r\n\t\t" );
+	var text = createText( "\n\t\t" );
 	
 	var graph_initialData = {
 		primarytype: "work",
@@ -1131,7 +1128,7 @@ function renderIfBlock3_1 ( root, component ) {
 		data: details_initialData
 	});
 	
-	var text = createText( "\r\n\t\t" );
+	var text = createText( "\n\t\t" );
 	
 	var graph_initialData = {
 		primarytype: "work",
