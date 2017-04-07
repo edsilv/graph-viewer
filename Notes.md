@@ -1,4 +1,4 @@
-##How do you set a class inline?
+## How do you set a class inline? In this case I want to add a 'selected' class if page === 'about'
 
     src/App.html
 
@@ -10,7 +10,7 @@
 {{/if}}
 ```
 
-##Why do I have to duplicate the Details and Graph components to force them to render? Shouldn't updating the `graphcategory` and `details` data trigger this?
+## Why do I have to duplicate the Details and Graph components to force them to render? Shouldn't updating the `graphcategory` and `details` data trigger this?
 
     src/App.html
 
@@ -27,7 +27,7 @@
 
 ```
 
-##How do you do nested #if statements?
+## How do you do nested #if statements?
 
     /src/components/Details.html
 
