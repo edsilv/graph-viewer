@@ -1,0 +1,164 @@
+body {
+  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+  font-size: 1.07em;
+  margin: 0px;
+  padding: 0px;
+  line-height: 1.5em;
+  background-color: #1c1c1c;
+  color: #aeaeae;
+}
+a {
+  text-decoration: none;
+}
+a:link {
+  color: #75a2ca;
+}
+a:visited {
+  color: #75a2ca;
+}
+a:hover {
+  color: #75a2ca;
+  text-decoration: underline;
+}
+a:active {
+  color: #75a2ca;
+}
+header {
+  padding: 60px 0px 0px 60px;
+}
+header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+header li {
+  float: left;
+}
+header li a {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  display: block;
+  text-align: center;
+  padding: 0 30px 15px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: 0.9em;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+}
+header li a.selected:link {
+  color: #fff;
+}
+header li a.selected:visited {
+  color: #fff;
+}
+header li a.selected:hover {
+  color: #fff;
+}
+header li a.selected:active {
+  color: #fff;
+}
+header li a:link {
+  color: #aeaeae;
+}
+header li a:visited {
+  color: #aeaeae;
+}
+header li a:hover {
+  color: #aeaeae;
+  text-decoration: none;
+}
+header li a:active {
+  color: #aeaeae;
+}
+main {
+  overflow: hidden;
+}
+#details {
+  float: left;
+  width: 400px;
+  margin: 10px 30px 60px 60px;
+}
+#details p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+#details ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#details .image-or-video {
+  width: 400px;
+  margin: 30px 0 0 0;
+}
+#details .image-or-video img {
+  width: 400px;
+}
+#details .types {
+  margin: 20px 0 0 0;
+  overflow: hidden;
+}
+#details .types h3 {
+  font-size: 1em;
+}
+#details .types .type {
+  float: left;
+  margin: 0 60px 0 0;
+}
+h1,
+h2,
+h3 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  color: #fff;
+}
+h2 {
+  font-size: 1.4em;
+}
+#graph {
+  float: left;
+  width: 800px;
+  height: 800px;
+}
+#graph g.node text {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  text-anchor: middle;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+}
+#graph g.node text.primary {
+  fill: #aeaeae;
+}
+#graph g.node text.category {
+  fill: #fff;
+  font-size: 1.25em;
+}
+#graph line.link {
+  fill: none;
+  stroke: #2e2e2e;
+  stroke-width: 1px;
+}
