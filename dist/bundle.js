@@ -153,8 +153,8 @@ function renderMainFragment$1 ( root, component ) {
 	appendNode( ifBlock1_anchor, div );
 	
 	function getBlock1 ( root ) {
-		if ( root.content.image && root.content.link ) return renderIfBlock1_0$1;
-		if ( root.content.image ) return renderIfBlock1_1$1;
+		if ( root.content.image && root.content.link ) return renderIfBlock1_0;
+		if ( root.content.image ) return renderIfBlock1_1;
 		return null;
 	}
 	
@@ -167,7 +167,7 @@ function renderMainFragment$1 ( root, component ) {
 	appendNode( ifBlock2_anchor, div );
 	
 	function getBlock2 ( root ) {
-		if ( root.content.vimeo ) return renderIfBlock2_0$1;
+		if ( root.content.vimeo ) return renderIfBlock2_0;
 		return null;
 	}
 	
@@ -180,7 +180,7 @@ function renderMainFragment$1 ( root, component ) {
 	appendNode( ifBlock3_anchor, div );
 	
 	function getBlock3 ( root ) {
-		if ( root.content.text ) return renderIfBlock3_0$1;
+		if ( root.content.text ) return renderIfBlock3_0;
 		return null;
 	}
 	
@@ -457,7 +457,7 @@ function renderIfBlock4_0 ( root, component ) {
 	};
 }
 
-function renderIfBlock3_0$1 ( root, component ) {
+function renderIfBlock3_0 ( root, component ) {
 	var p = createElement( 'p' );
 	
 	var raw_before = createElement( 'noscript' );
@@ -487,7 +487,7 @@ function renderIfBlock3_0$1 ( root, component ) {
 	};
 }
 
-function renderIfBlock2_0$1 ( root, component ) {
+function renderIfBlock2_0 ( root, component ) {
 	var div = createElement( 'div' );
 	div.className = "image-or-video";
 	
@@ -519,7 +519,7 @@ function renderIfBlock2_0$1 ( root, component ) {
 	};
 }
 
-function renderIfBlock1_1$1 ( root, component ) {
+function renderIfBlock1_1 ( root, component ) {
 	var div = createElement( 'div' );
 	div.className = "image-or-video";
 	
@@ -545,7 +545,7 @@ function renderIfBlock1_1$1 ( root, component ) {
 	};
 }
 
-function renderIfBlock1_0$1 ( root, component ) {
+function renderIfBlock1_0 ( root, component ) {
 	var div = createElement( 'div' );
 	div.className = "image-or-video";
 	
@@ -878,6 +878,13 @@ return {
 		Graph
 	},
 
+	helpers: {
+		getClass(pageName) {
+			if (pageName === this.page) return 'selected';
+			return '';
+		}
+	},
+
 	methods: {
 		about: function() {
 			this.set({ 
@@ -928,78 +935,87 @@ function renderMainFragment ( root, component ) {
 	var li = createElement( 'li' );
 	
 	appendNode( li, ul );
+	
+	var a = createElement( 'a' );
+	a.href = "#";
+	a.className = root.page === "about" ? "selected" : "";
+	
+	function clickHandler ( event ) {
+		component.about();
+	}
+	
+	addEventListener( a, 'click', clickHandler );
+	
+	appendNode( a, li );
+	appendNode( createText( "About" ), a );
+	appendNode( createText( "\n\t\t" ), ul );
+	
+	var li1 = createElement( 'li' );
+	
+	appendNode( li1, ul );
+	
+	var a1 = createElement( 'a' );
+	a1.href = "#";
+	a1.className = root.page === "themes" ? "selected" : "";
+	
+	function clickHandler1 ( event ) {
+		component.themes();
+	}
+	
+	addEventListener( a1, 'click', clickHandler1 );
+	
+	appendNode( a1, li1 );
+	appendNode( createText( "Themes" ), a1 );
+	appendNode( createText( "\n\t\t" ), ul );
+	
+	var li2 = createElement( 'li' );
+	
+	appendNode( li2, ul );
+	
+	var a2 = createElement( 'a' );
+	a2.href = "#";
+	a2.className = root.page === "form" ? "selected" : "";
+	
+	function clickHandler2 ( event ) {
+		component.form();
+	}
+	
+	addEventListener( a2, 'click', clickHandler2 );
+	
+	appendNode( a2, li2 );
+	appendNode( createText( "Form" ), a2 );
+	var text5 = createText( "\n\n" );
+	
+	var main = createElement( 'main' );
+	
 	var ifBlock_anchor = createComment();
-	appendNode( ifBlock_anchor, li );
+	appendNode( ifBlock_anchor, main );
 	
 	function getBlock ( root ) {
 		if ( root.page === 'about' ) return renderIfBlock_0;
-		return renderIfBlock_1;
+		if ( root.page === 'themes' ) return renderIfBlock_1;
+		return renderIfBlock_2;
 	}
 	
 	var currentBlock = getBlock( root );
 	var ifBlock = currentBlock && currentBlock( root, component );
 	
 	if ( ifBlock ) ifBlock.mount( ifBlock_anchor.parentNode, ifBlock_anchor );
-	appendNode( createText( "\n\t\t" ), ul );
-	
-	var li1 = createElement( 'li' );
-	
-	appendNode( li1, ul );
-	var ifBlock1_anchor = createComment();
-	appendNode( ifBlock1_anchor, li1 );
-	
-	function getBlock1 ( root ) {
-		if ( root.page === 'themes' ) return renderIfBlock1_0;
-		return renderIfBlock1_1;
-	}
-	
-	var currentBlock1 = getBlock1( root );
-	var ifBlock1 = currentBlock1 && currentBlock1( root, component );
-	
-	if ( ifBlock1 ) ifBlock1.mount( ifBlock1_anchor.parentNode, ifBlock1_anchor );
-	appendNode( createText( "\n\t\t" ), ul );
-	
-	var li2 = createElement( 'li' );
-	
-	appendNode( li2, ul );
-	var ifBlock2_anchor = createComment();
-	appendNode( ifBlock2_anchor, li2 );
-	
-	function getBlock2 ( root ) {
-		if ( root.page === 'form' ) return renderIfBlock2_0;
-		return renderIfBlock2_1;
-	}
-	
-	var currentBlock2 = getBlock2( root );
-	var ifBlock2 = currentBlock2 && currentBlock2( root, component );
-	
-	if ( ifBlock2 ) ifBlock2.mount( ifBlock2_anchor.parentNode, ifBlock2_anchor );
-	var text2 = createText( "\n\n" );
-	
-	var main = createElement( 'main' );
-	
-	var ifBlock3_anchor = createComment();
-	appendNode( ifBlock3_anchor, main );
-	
-	function getBlock3 ( root ) {
-		if ( root.page === 'about' ) return renderIfBlock3_0;
-		if ( root.page === 'themes' ) return renderIfBlock3_1;
-		return renderIfBlock3_2;
-	}
-	
-	var currentBlock3 = getBlock3( root );
-	var ifBlock3 = currentBlock3 && currentBlock3( root, component );
-	
-	if ( ifBlock3 ) ifBlock3.mount( ifBlock3_anchor.parentNode, ifBlock3_anchor );
 
 	return {
 		mount: function ( target, anchor ) {
 			insertNode( header, target, anchor );
-			insertNode( text2, target, anchor );
+			insertNode( text5, target, anchor );
 			insertNode( main, target, anchor );
 		},
 		
 		update: function ( changed, root ) {
+			a.className = root.page === "about" ? "selected" : "";
+			
+			a1.className = root.page === "themes" ? "selected" : "";
+			
+			a2.className = root.page === "form" ? "selected" : "";
+			
 			var _currentBlock = currentBlock;
 			currentBlock = getBlock( root );
 			if ( _currentBlock === currentBlock && ifBlock) {
@@ -1009,54 +1025,24 @@ function renderMainFragment ( root, component ) {
 				ifBlock = currentBlock && currentBlock( root, component );
 				if ( ifBlock ) ifBlock.mount( ifBlock_anchor.parentNode, ifBlock_anchor );
 			}
-			
-			var _currentBlock1 = currentBlock1;
-			currentBlock1 = getBlock1( root );
-			if ( _currentBlock1 === currentBlock1 && ifBlock1) {
-				ifBlock1.update( changed, root );
-			} else {
-				if ( ifBlock1 ) ifBlock1.teardown( true );
-				ifBlock1 = currentBlock1 && currentBlock1( root, component );
-				if ( ifBlock1 ) ifBlock1.mount( ifBlock1_anchor.parentNode, ifBlock1_anchor );
-			}
-			
-			var _currentBlock2 = currentBlock2;
-			currentBlock2 = getBlock2( root );
-			if ( _currentBlock2 === currentBlock2 && ifBlock2) {
-				ifBlock2.update( changed, root );
-			} else {
-				if ( ifBlock2 ) ifBlock2.teardown( true );
-				ifBlock2 = currentBlock2 && currentBlock2( root, component );
-				if ( ifBlock2 ) ifBlock2.mount( ifBlock2_anchor.parentNode, ifBlock2_anchor );
-			}
-			
-			var _currentBlock3 = currentBlock3;
-			currentBlock3 = getBlock3( root );
-			if ( _currentBlock3 === currentBlock3 && ifBlock3) {
-				ifBlock3.update( changed, root );
-			} else {
-				if ( ifBlock3 ) ifBlock3.teardown( true );
-				ifBlock3 = currentBlock3 && currentBlock3( root, component );
-				if ( ifBlock3 ) ifBlock3.mount( ifBlock3_anchor.parentNode, ifBlock3_anchor );
-			}
 		},
 		
 		teardown: function ( detach ) {
+			removeEventListener( a, 'click', clickHandler );
+			removeEventListener( a1, 'click', clickHandler1 );
+			removeEventListener( a2, 'click', clickHandler2 );
 			if ( ifBlock ) ifBlock.teardown( false );
-			if ( ifBlock1 ) ifBlock1.teardown( false );
-			if ( ifBlock2 ) ifBlock2.teardown( false );
-			if ( ifBlock3 ) ifBlock3.teardown( false );
 			
 			if ( detach ) {
 				detachNode( header );
-				detachNode( text2 );
+				detachNode( text5 );
 				detachNode( main );
 			}
 		}
 	};
 }
 
-function renderIfBlock3_2 ( root, component ) {
+function renderIfBlock_2 ( root, component ) {
 	var details_initialData = {
 		content: root.details
 	};
@@ -1118,7 +1104,7 @@ function renderIfBlock3_2 ( root, component ) {
 	};
 }
 
-function renderIfBlock3_1 ( root, component ) {
+function renderIfBlock_1 ( root, component ) {
 	var details_initialData = {
 		content: root.details
 	};
@@ -1180,7 +1166,7 @@ function renderIfBlock3_1 ( root, component ) {
 	};
 }
 
-function renderIfBlock3_0 ( root, component ) {
+function renderIfBlock_0 ( root, component ) {
 	var details_initialData = {
 		content: root.aboutdetails
 	};
@@ -1205,183 +1191,6 @@ function renderIfBlock3_0 ( root, component ) {
 		
 		teardown: function ( detach ) {
 			details.teardown( detach );
-		}
-	};
-}
-
-function renderIfBlock2_1 ( root, component ) {
-	var a = createElement( 'a' );
-	a.href = "#";
-	
-	function clickHandler ( event ) {
-		component.form();
-	}
-	
-	addEventListener( a, 'click', clickHandler );
-	
-	appendNode( createText( "Form" ), a );
-
-	return {
-		mount: function ( target, anchor ) {
-			insertNode( a, target, anchor );
-		},
-		
-		update: noop,
-		
-		teardown: function ( detach ) {
-			removeEventListener( a, 'click', clickHandler );
-			
-			if ( detach ) {
-				detachNode( a );
-			}
-		}
-	};
-}
-
-function renderIfBlock2_0 ( root, component ) {
-	var a = createElement( 'a' );
-	a.href = "#";
-	a.className = "selected";
-	
-	function clickHandler ( event ) {
-		component.form();
-	}
-	
-	addEventListener( a, 'click', clickHandler );
-	
-	appendNode( createText( "Form" ), a );
-
-	return {
-		mount: function ( target, anchor ) {
-			insertNode( a, target, anchor );
-		},
-		
-		update: noop,
-		
-		teardown: function ( detach ) {
-			removeEventListener( a, 'click', clickHandler );
-			
-			if ( detach ) {
-				detachNode( a );
-			}
-		}
-	};
-}
-
-function renderIfBlock1_1 ( root, component ) {
-	var a = createElement( 'a' );
-	a.href = "#";
-	
-	function clickHandler ( event ) {
-		component.themes();
-	}
-	
-	addEventListener( a, 'click', clickHandler );
-	
-	appendNode( createText( "Themes" ), a );
-
-	return {
-		mount: function ( target, anchor ) {
-			insertNode( a, target, anchor );
-		},
-		
-		update: noop,
-		
-		teardown: function ( detach ) {
-			removeEventListener( a, 'click', clickHandler );
-			
-			if ( detach ) {
-				detachNode( a );
-			}
-		}
-	};
-}
-
-function renderIfBlock1_0 ( root, component ) {
-	var a = createElement( 'a' );
-	a.href = "#";
-	a.className = "selected";
-	
-	function clickHandler ( event ) {
-		component.themes();
-	}
-	
-	addEventListener( a, 'click', clickHandler );
-	
-	appendNode( createText( "Themes" ), a );
-
-	return {
-		mount: function ( target, anchor ) {
-			insertNode( a, target, anchor );
-		},
-		
-		update: noop,
-		
-		teardown: function ( detach ) {
-			removeEventListener( a, 'click', clickHandler );
-			
-			if ( detach ) {
-				detachNode( a );
-			}
-		}
-	};
-}
-
-function renderIfBlock_1 ( root, component ) {
-	var a = createElement( 'a' );
-	a.href = "#";
-	
-	function clickHandler ( event ) {
-		component.about();
-	}
-	
-	addEventListener( a, 'click', clickHandler );
-	
-	appendNode( createText( "About" ), a );
-
-	return {
-		mount: function ( target, anchor ) {
-			insertNode( a, target, anchor );
-		},
-		
-		update: noop,
-		
-		teardown: function ( detach ) {
-			removeEventListener( a, 'click', clickHandler );
-			
-			if ( detach ) {
-				detachNode( a );
-			}
-		}
-	};
-}
-
-function renderIfBlock_0 ( root, component ) {
-	var a = createElement( 'a' );
-	a.href = "#";
-	a.className = "selected";
-	
-	function clickHandler ( event ) {
-		component.about();
-	}
-	
-	addEventListener( a, 'click', clickHandler );
-	
-	appendNode( createText( "About" ), a );
-
-	return {
-		mount: function ( target, anchor ) {
-			insertNode( a, target, anchor );
-		},
-		
-		update: noop,
-		
-		teardown: function ( detach ) {
-			removeEventListener( a, 'click', clickHandler );
-			
-			if ( detach ) {
-				detachNode( a );
-			}
 		}
 	};
 }

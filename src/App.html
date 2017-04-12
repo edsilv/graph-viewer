@@ -1,25 +1,13 @@
 <header>
 	<ul>
 		<li>
-			{{#if page === 'about'}}
-				<a href="#" class="selected" on:click='about()'>About</a>
-			{{else}}
-				<a href="#" on:click='about()'>About</a>
-			{{/if}}
+			<a href='#' class='{{page === "about" ? "selected" : ""}}' on:click='about()'>About</a>
 		</li>
 		<li>
-			{{#if page === 'themes'}}
-				<a href="#" class="selected" on:click='themes()'>Themes</a>
-			{{else}}
-				<a href="#" on:click='themes()'>Themes</a>
-			{{/if}}
+			<a href='#' class='{{page === "themes" ? "selected" : ""}}' on:click='themes()'>Themes</a>
 		</li>
 		<li>
-			{{#if page === 'form'}}
-				<a href="#" class="selected" on:click='form()'>Form</a>
-			{{else}}
-				<a href="#" on:click='form()'>Form</a>
-			{{/if}}
+			<a href='#' class='{{page === "form" ? "selected" : ""}}' on:click='form()'>Form</a>
 		</li>
 	</ul>
 </header>
@@ -48,6 +36,13 @@ export default {
 	components: {
 		Details,
 		Graph
+	},
+
+	helpers: {
+		getClass(pageName) {
+			if (pageName === this.page) return 'selected';
+			return '';
+		}
 	},
 
 	methods: {
