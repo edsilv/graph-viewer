@@ -1,15 +1,3 @@
-## How do you set a class inline? In this case I want to add a 'selected' class if page === 'about'
-
-    src/App.html
-
-```
-{{#if page === 'about'}}
-    <a href="#" class="selected" on:click='about()'>About</a>
-{{else}}
-    <a href="#" on:click='about()'>About</a>
-{{/if}}
-```
-
 ## Why do I have to duplicate the Details and Graph components to force them to render? Shouldn't updating the `graphcategory` and `details` data trigger this?
 
     src/App.html
