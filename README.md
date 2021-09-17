@@ -1,5 +1,5 @@
 # oeuvre
 
-http://edsilv.github.io/oeuvre/dist/
+http://edsilv.github.io/oeuvre/
 
     npm start
